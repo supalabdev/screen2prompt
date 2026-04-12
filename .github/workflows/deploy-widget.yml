@@ -1,18 +1,15 @@
 name: Deploy Widget to CDN
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - "packages/screen2prompt/src/**"
-      - "packages/screen2prompt/package.json"
-      - "packages/screen2prompt/stencil.config.ts"
+  release:
+    types: [published]
   workflow_dispatch: # allow manual trigger from GitHub UI
 
 env:
   BUCKET_NAME: ${{ vars.R2_BUCKET_NAME }}
   CDN_PATH: v1/screen2prompt.js
   DIST_FILE: packages/screen2prompt/dist/cdn/screen2prompt.js
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   deploy:
