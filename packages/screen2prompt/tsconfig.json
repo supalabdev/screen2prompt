@@ -32,6 +32,7 @@
     "src/generated",
     "src/react",
     "src/next",
+    "src/cdn",
     "**/*.spec.ts",
     "**/*.spec.tsx"
   ]
