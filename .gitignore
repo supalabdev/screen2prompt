@@ -88,3 +88,8 @@ pnpm-debug.log*
 next-env.d.ts
 
 .env
+
+# Claude Code / AI agent local config
+.agents/
+.claude/
+CLAUDE.md

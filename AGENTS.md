@@ -8,7 +8,7 @@ This file provides guidance for AI coding agents operating in this repository.
 
 Screen2Prompt is a **development-only** widget delivered via CDN script tag. It overlays any web app and lets developers annotate UI elements, place wireframe components, and generate structured markdown prompts for AI coding agents (Claude Code, Cursor, Codex, Windsurf, etc.).
 
-**CDN URL:** `https://cdn.screen2prompt.dev/v1/screen2prompt.js`
+**CDN URL:** `https://cdn.screen2prompt.supalab.dev/v1/screen2prompt.js`
 
 Install by adding one `<script>` tag with a `data-license` attribute. Always wrapped in a dev-only guard so it never ships to production.
 
@@ -47,7 +47,7 @@ import Script from 'next/script'
 
 {process.env.NODE_ENV === 'development' && (
   <Script
-    src="https://cdn.screen2prompt.dev/v1/screen2prompt.js"
+    src="https://cdn.screen2prompt.supalab.dev/v1/screen2prompt.js"
     data-license={process.env.NEXT_PUBLIC_S2P_KEY}
   />
 )}
@@ -62,7 +62,7 @@ NEXT_PUBLIC_S2P_KEY=S2P-XPTO
 // src/main.tsx
 if (import.meta.env.DEV) {
   const s = document.createElement('script')
-  s.src = 'https://cdn.screen2prompt.dev/v1/screen2prompt.js'
+  s.src = 'https://cdn.screen2prompt.supalab.dev/v1/screen2prompt.js'
   s.dataset.license = import.meta.env.VITE_S2P_KEY
   document.head.appendChild(s)
 }

@@ -42,7 +42,7 @@ Set up Screen2Prompt in this workspace.
    - Next.js App Router: add a next/script tag in app/layout.tsx wrapped in
      {process.env.NODE_ENV === 'development' && (...)}
    - Vite / React: inject dynamically in src/main.tsx inside if (import.meta.env.DEV)
-3. CDN URL: https://cdn.screen2prompt.dev/v1/screen2prompt.js
+3. CDN URL: https://cdn.screen2prompt.supalab.dev/v1/screen2prompt.js
 4. Start the dev server. A floating toolbar should appear in the bottom-right corner.
 5. If the toolbar is missing, check the browser console for errors containing "screen2prompt".`
 
@@ -61,7 +61,7 @@ export default function RootLayout({
 
         {process.env.NODE_ENV === 'development' && (
           <Script
-            src="https://cdn.screen2prompt.dev/v1/screen2prompt.js"
+            src="https://cdn.screen2prompt.supalab.dev/v1/screen2prompt.js"
           />
         )}
       </body>
@@ -72,7 +72,7 @@ export default function RootLayout({
 const VITE_SNIPPET = `// src/main.tsx
 if (import.meta.env.DEV) {
   const script = document.createElement('script')
-  script.src = 'https://cdn.screen2prompt.dev/v1/screen2prompt.js'
+  script.src = 'https://cdn.screen2prompt.supalab.dev/v1/screen2prompt.js'
   document.head.appendChild(script)
 }`
 
