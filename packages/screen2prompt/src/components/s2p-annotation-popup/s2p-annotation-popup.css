@@ -1,0 +1,125 @@
+:host {
+  /* --s2p-primary inherits from s2p-root */
+  --s2p-dark:       lab(0% 0 0);
+  --s2p-dark-light: lab(6% 0 0);
+  --s2p-border:     lab(11.724% 0 0);
+  --s2p-text:       #ededed;
+  --s2p-text-muted: #888888;
+}
+
+.s2p-popup {
+  position: fixed;
+  width: 320px;
+  background: var(--s2p-dark);
+  border: 1px solid var(--s2p-border);
+  border-radius: 12px;
+  box-shadow: 0 0 0 1px lab(14% 0 0), 0 8px 32px rgba(0, 0, 0, 0.6);
+  z-index: 999999;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 13px;
+  color: var(--s2p-text);
+  overflow: hidden;
+}
+
+.s2p-popup__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px 8px;
+  border-bottom: 1px solid var(--s2p-border);
+  gap: 8px;
+}
+
+.s2p-popup__element-desc {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--s2p-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.s2p-popup__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  color: var(--s2p-text-muted);
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 12px;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.s2p-popup__close:hover {
+  background: var(--s2p-dark-light);
+  color: var(--s2p-text);
+}
+
+.s2p-popup__textarea {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  background: var(--s2p-dark-light);
+  border: none;
+  border-bottom: 1px solid var(--s2p-border);
+  color: var(--s2p-text);
+  font-family: inherit;
+  font-size: 13px;
+  resize: none;
+  outline: none;
+  line-height: 1.5;
+}
+
+.s2p-popup__textarea::placeholder {
+  color: var(--s2p-text-muted);
+}
+
+.s2p-popup__footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 8px 12px;
+}
+
+.s2p-popup__btn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.s2p-popup__btn--cancel {
+  background: transparent;
+  color: var(--s2p-text-muted);
+}
+
+.s2p-popup__btn--cancel:hover {
+  background: var(--s2p-dark-light);
+  color: var(--s2p-text);
+}
+
+.s2p-popup__btn--confirm {
+  background: var(--s2p-primary);
+  color: white;
+}
+
+.s2p-popup__btn--confirm:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--s2p-primary) 80%, white);
+}
+
+.s2p-popup__btn--confirm:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

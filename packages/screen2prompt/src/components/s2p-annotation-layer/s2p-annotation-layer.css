@@ -1,0 +1,33 @@
+:host {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 999998;
+}
+
+.s2p-highlight {
+  position: fixed;
+  outline: 2px solid var(--s2p-primary);
+  outline-offset: 1px;
+  background: color-mix(in srgb, var(--s2p-primary) 8%, transparent);
+  border-radius: 2px;
+  pointer-events: none;
+  transition: top 0.05s ease, left 0.05s ease, width 0.05s ease, height 0.05s ease;
+}
+
+.s2p-drag-selection {
+  position: fixed;
+  border: 1.5px dashed var(--s2p-primary);
+  background: color-mix(in srgb, var(--s2p-primary) 12%, transparent);
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+.s2p-area-highlight {
+  position: fixed;
+  outline: 2px solid var(--s2p-primary);
+  outline-offset: 1px;
+  background: color-mix(in srgb, var(--s2p-primary) 10%, transparent);
+  border-radius: 2px;
+  pointer-events: none;
+}

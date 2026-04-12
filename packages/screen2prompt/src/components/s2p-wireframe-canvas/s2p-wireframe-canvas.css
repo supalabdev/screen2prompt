@@ -1,0 +1,115 @@
+:host {
+  --s2p-dark:       lab(0% 0 0);
+  --s2p-dark-light: lab(6% 0 0);
+  --s2p-border:     lab(11.724% 0 0);
+  --s2p-text:       #ededed;
+  --s2p-text-muted: #888888;
+  --s2p-primary:    #14b8a6;
+}
+
+.s2p-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 999988;
+  pointer-events: none;
+}
+
+/* Page dimmer — opacity controlled via inline style */
+.s2p-canvas__overlay {
+  position: absolute;
+  inset: 0;
+  background: lab(0% 0 0);
+  pointer-events: none;
+}
+
+/* Dot grid */
+.s2p-canvas__grid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(160, 160, 200, 0.25) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+}
+
+/* Controls bar — pinned to bottom, above the toolbar zone */
+.s2p-canvas__bar {
+  position: absolute;
+  bottom: 96px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 14px;
+  background: var(--s2p-dark);
+  border: 1px solid var(--s2p-border);
+  border-radius: 12px;
+  box-shadow: 0 0 0 1px lab(14% 0 0), 0 8px 32px rgba(0, 0, 0, 0.6);
+  width: 560px;
+  max-width: calc(100vw - 32px);
+  pointer-events: all;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.s2p-canvas__description {
+  flex: 1;
+  background: var(--s2p-dark-light);
+  border: 1px solid var(--s2p-border);
+  border-radius: 6px;
+  color: var(--s2p-text);
+  font-size: 12px;
+  font-family: inherit;
+  padding: 8px 10px;
+  resize: none;
+  outline: none;
+  line-height: 1.5;
+}
+
+.s2p-canvas__description::placeholder {
+  color: var(--s2p-text-muted);
+}
+
+.s2p-canvas__description:focus {
+  border-color: var(--s2p-primary);
+}
+
+.s2p-canvas__opacity-ctrl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  padding-top: 4px;
+}
+
+.s2p-canvas__opacity-label {
+  font-size: 10px;
+  color: var(--s2p-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.s2p-canvas__slider {
+  -webkit-appearance: none;
+  width: 80px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--s2p-border);
+  outline: none;
+  cursor: pointer;
+}
+
+.s2p-canvas__slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--s2p-primary);
+  cursor: pointer;
+}
+
+.s2p-canvas__opacity-value {
+  font-size: 10px;
+  color: var(--s2p-text-muted);
+  font-family: 'SF Mono', 'Fira Code', monospace;
+}

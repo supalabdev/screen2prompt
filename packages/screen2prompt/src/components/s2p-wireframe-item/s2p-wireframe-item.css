@@ -1,0 +1,89 @@
+.s2p-item {
+  position: fixed;
+  cursor: grab;
+  border: 2px solid color-mix(in srgb, var(--s2p-primary) 50%, transparent);
+  border-radius: 6px;
+  overflow: hidden;
+  z-index: 999994;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  transition: border-color 0.15s;
+}
+
+.s2p-item:hover {
+  border-color: var(--s2p-primary);
+}
+
+.s2p-item--dragging {
+  cursor: grabbing;
+  opacity: 0.85;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+  z-index: 999999;
+}
+
+.s2p-item--outside {
+  border-color: rgba(239, 68, 68, 0.6);
+  border-style: dashed;
+}
+
+.s2p-item__preview {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.s2p-item__preview svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.s2p-item__delete {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  color: #a0a0a0;
+  font-size: 11px;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 0;
+  font-family: inherit;
+}
+
+.s2p-item__delete:hover {
+  background: rgba(239, 68, 68, 0.8);
+  color: #ffffff;
+}
+
+/* ── Resize handles ── */
+
+.s2p-handle {
+  position: absolute;
+  background: var(--s2p-primary);
+  border: 2px solid lab(0% 0 0);
+  border-radius: 2px;
+  z-index: 10;
+}
+
+/* Side handles — thin strips */
+.s2p-handle--n { top: -4px;    left: 20%;  right: 20%; height: 8px;  cursor: n-resize; }
+.s2p-handle--s { bottom: -4px; left: 20%;  right: 20%; height: 8px;  cursor: s-resize; }
+.s2p-handle--e { right: -4px;  top: 20%;   bottom: 20%; width: 8px;  cursor: e-resize; }
+.s2p-handle--w { left: -4px;   top: 20%;   bottom: 20%; width: 8px;  cursor: w-resize; }
+
+/* Corner handles — small squares */
+.s2p-handle--nw { top: -5px;    left: -5px;    width: 10px; height: 10px; cursor: nw-resize; }
+.s2p-handle--ne { top: -5px;    right: -5px;   width: 10px; height: 10px; cursor: ne-resize; }
+.s2p-handle--sw { bottom: -5px; left: -5px;    width: 10px; height: 10px; cursor: sw-resize; }
+.s2p-handle--se { bottom: -5px; right: -5px;   width: 10px; height: 10px; cursor: se-resize; }
+
+.s2p-handle:hover {
+  background: color-mix(in srgb, var(--s2p-primary) 80%, white);
+  transform: scale(1.3);
+}

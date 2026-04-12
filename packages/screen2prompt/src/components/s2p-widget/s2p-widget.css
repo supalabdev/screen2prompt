@@ -1,0 +1,52 @@
+/**
+ * Screen2Prompt Widget Root Styles
+ * Scoped to shadow DOM — no conflicts with host app
+ */
+
+:host {
+  --s2p-primary: #14b8a6;
+  --s2p-dark:       lab(0% 0 0);
+  --s2p-dark-light: lab(6% 0 0);
+  --s2p-border:     lab(11.724% 0 0);
+  --s2p-text:       #ededed;
+  --s2p-text-muted: #888888;
+  --s2p-z-toolbar: 999999;
+  --s2p-z-overlay: 999998;
+  --s2p-z-badge: 999997;
+
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.s2p-root {
+  all: initial;
+  /* --s2p-primary is set via inline style from state.settings.primaryColor */
+  --s2p-primary: #14b8a6; /* fallback only */
+  --s2p-dark:       lab(0% 0 0);
+  --s2p-dark-light: lab(6% 0 0);
+  --s2p-border:     lab(11.724% 0 0);
+  --s2p-text:       #ededed;
+  --s2p-text-muted: #888888;
+  --s2p-z-toolbar: 999999;
+  --s2p-z-overlay: 999998;
+  --s2p-z-badge: 999997;
+
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 14px;
+  color: var(--s2p-text);
+}
+

@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "skills": {
+    "better-auth-best-practices": {
+      "source": "better-auth/skills",
+      "sourceType": "github",
+      "computedHash": "a4c830509e85557b59339d8d93a4e243e9e59c686e7678854d39230e12c2a6dc"
+    },
+    "better-auth-security-best-practices": {
+      "source": "better-auth/skills",
+      "sourceType": "github",
+      "computedHash": "5717187bba9c22030c7174c74012f01c359f21e2ce87e0eb80e24244d8b8c915"
+    },
+    "cloudflare": {
+      "source": "cloudflare/skills",
+      "sourceType": "github",
+      "computedHash": "571ac30959723f3d2fc38fddf751a53dc99408723cf5220f02c7c206c67fb65b"
+    },
+    "coss": {
+      "source": "cosscom/coss",
+      "sourceType": "github",
+      "computedHash": "7fc8b04e73c445d9463ce27d0719832ed5ca3cbe70c3ac20fe15848aae24180e"
+    }
+  }
+}

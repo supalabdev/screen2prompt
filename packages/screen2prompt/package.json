@@ -1,0 +1,67 @@
+{
+  "name": "screen2prompt",
+  "version": "0.1.0",
+  "description": "npm widget for precise visual feedback to AI agents",
+  "private": false,
+  "type": "module",
+  "files": [
+    "dist",
+    "loader"
+  ],
+  "collection": "dist/collection/collection-manifest.json",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
+  "types": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.cjs.js"
+    },
+    "./react": {
+      "development": "./src/react/index.tsx",
+      "default": "./dist/react/index.js"
+    },
+    "./next": {
+      "development": "./src/next/index.ts",
+      "default": "./dist/next/index.js"
+    },
+    "./loader": "./dist/esm/loader.js",
+    "./cdn": "./dist/cdn/screen2prompt.js"
+  },
+  "scripts": {
+    "build": "stencil build && esbuild src/react/index.tsx --bundle --outfile=dist/react/index.js --packages=external --format=esm --platform=browser && esbuild src/next/index.ts --bundle --outfile=dist/next/index.js --packages=external --format=esm --platform=browser && bun run build:cdn",
+    "build:cdn": "esbuild src/cdn/index.ts --bundle --format=iife --global-name=Screen2PromptCDN --platform=browser --target=es2019 --minify --outfile=dist/cdn/screen2prompt.js",
+    "dev": "stencil build --watch",
+    "dev:prepare": "stencil build",
+    "test": "stencil test --spec",
+    "lint": "eslint 'src/**/*.{ts,tsx}'"
+  },
+  "peerDependencies": {
+    "next": ">=13",
+    "react": ">=17",
+    "react-dom": ">=17"
+  },
+  "peerDependenciesMeta": {
+    "next": { "optional": true }
+  },
+  "dependencies": {
+    "@stencil/core": "^4.10.0",
+    "@stencil/store": "^2.1.0"
+  },
+  "devDependencies": {
+    "@stencil/angular-output-target": "^0.10.1",
+    "@stencil/react-output-target": "^0.5.1",
+    "@stencil/vue-output-target": "^0.8.8",
+    "@types/jest": "^29.5.8",
+    "@types/node": "^20.10.5",
+    "@types/react": "^19.2.14",
+    "esbuild": "^0.27.7",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "react": "^19.2.4",
+    "typescript": "^5.9.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
