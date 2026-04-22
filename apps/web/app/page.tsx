@@ -106,7 +106,15 @@ export default function Page() {
               </section>
 
               {/* video demo */}
-              <section className="relative aspect-video w-full overflow-hidden rounded-lg border border-input bg-card"></section>
+              <section className="relative aspect-video w-full overflow-hidden rounded-lg border border-input bg-card">
+                <iframe
+                  src="https://www.youtube.com/embed/hk5ozzgD3mY"
+                  title="Screen2Prompt Demo"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="absolute inset-0 h-full w-full"
+                />
+              </section>
             </section>
 
             <section
